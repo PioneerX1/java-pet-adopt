@@ -4,33 +4,10 @@ public class App {
   public static void main(String[] args) {
     Console myConsole = System.console();
 
-    Animals rappy = new Animals();
-      rappy.mName = "Rappy";
-      rappy.mAge = 7;
-      rappy.mSpecies = "Cat";
-      rappy.mGender = "Female";
-      rappy.mAvailableForAdopt = false;
-
-    Animals vanilla = new Animals();
-      vanilla.mName = "Vanilla";
-      vanilla.mAge = 4;
-      vanilla.mSpecies = "Dog";
-      vanilla.mGender = "Female";
-      vanilla.mAvailableForAdopt = false;
-
-    Animals fluffy = new Animals();
-      fluffy.mName = "Fluffy";
-      fluffy.mAge = 10;
-      fluffy.mSpecies = "Cat";
-      fluffy.mGender = "Male";
-      fluffy.mAvailableForAdopt = true;
-
-    Animals killer = new Animals();
-      killer.mName = "Killer";
-      killer.mAge = 5;
-      killer.mSpecies = "Komodo Dragon";
-      killer.mGender = "Male";
-      killer.mAvailableForAdopt = true;
+    Animals rappy = new Animals("Rappy", 7, "Cat", "Female", false);
+    Animals vanilla = new Animals("Vanilla", 4, "Dog", "Female", false);
+    Animals fluffy = new Animals("Fluffy", 10, "Cat", "Male", true);
+    Animals killer = new Animals("Killer", 5, "Komodo Dragon", "Male", true);
 
     Animals[] allAnimals = {rappy, vanilla, fluffy, killer};
 
