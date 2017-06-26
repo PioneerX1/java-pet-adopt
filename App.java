@@ -1,5 +1,8 @@
+import java.io.Console;
+
 public class App {
   public static void main(String[] args) {
+    Console myConsole = System.console();
 
     Animals rappy = new Animals();
       rappy.mName = "Rappy";
@@ -31,15 +34,33 @@ public class App {
 
     Animals[] allAnimals = {rappy, vanilla, fluffy, killer};
 
-    System.out.println("All Animals:");
+    System.out.println("Are you open to older pets?");
+    String wantOlderPets = myConsole.readLine();
 
-    for (Animals individualAnimals : allAnimals) {
-      System.out.println( "----------------------" );
-      System.out.println(individualAnimals.mName);
-      System.out.println(individualAnimals.mAge);
-      System.out.println(individualAnimals.mSpecies);
-      System.out.println(individualAnimals.mGender);
-      System.out.println(individualAnimals.mAvailableForAdopt);
-    }
+    if (wantOlderPets.contains("y")) {
+      System.out.println("All Animals:");
+
+      for (Animals individualAnimals : allAnimals) {
+        if (individualAnimals.canBeAdopted() == true) {
+        System.out.println( "----------------------" );
+        System.out.println(individualAnimals.mName);
+        System.out.println(individualAnimals.mAge);
+        System.out.println(individualAnimals.mSpecies);
+        System.out.println(individualAnimals.mGender);
+        System.out.println(individualAnimals.mAvailableForAdopt);
+        }
+    } } else {
+      //olderPet();
+      for (Animals individualAnimals : allAnimals) {
+        if (individualAnimals.olderPet() == true && individualAnimals.canBeAdopted() == true) {
+        System.out.println( "----------------------" );
+        System.out.println(individualAnimals.mName);
+        System.out.println(individualAnimals.mAge);
+        System.out.println(individualAnimals.mSpecies);
+        System.out.println(individualAnimals.mGender);
+        System.out.println(individualAnimals.mAvailableForAdopt);
+      }
+     }
+   }
   }
 }
